@@ -56,44 +56,40 @@ Hey, Netology
     PGh0bWw+Cgo8aGVhZD4KICAgIEhleSwgTmV0b2xvZ3kKPC9oZWFkPgoKPGJvZHk+CiAgICA8aDE+
     SSB3aWxsIGJlIERldk9wcyBFbmdpbmVlciE8L2gxPgo8L2JvZHk+Cgo8L2h0bWw+Cg==
     vagrant@server1:~/docker$ curl localhost:8080
+    <html>
     
-    ```
+    <head>
+        Hey, Netology
+    </head>
+    
+    <body>
+        <h1>I will be DevOps Engineer!</h1>
+    </body>
+    
+    </html>
+    vagrant@server1:~/docker$ curl 127.0.0.1:8080
+    <html>
+    
+    <head>
+        Hey, Netology
+    </head>
+    
+    <body>
+        <h1>I will be DevOps Engineer!</h1>
+    </body>
+    
+    </html>
 ```
-<html>
-
-<head>
-    Hey, Netology
-</head>
-
-<body>
-    <h1>I will be DevOps Engineer!</h1>
-</body>
-
-</html>
-vagrant@server1:~/docker$ curl 127.0.0.1:8080
-<html>
-
-<head>
-    Hey, Netology
-</head>
-
-<body>
-    <h1>I will be DevOps Engineer!</h1>
-</body>
-
-</html>
-```
-
-![vagrant@server1: ~:docker 2024-04-10 12-30-06](vagrant@server1: ~:docker 2024-04-10 12-30-06.png)
 
 В качестве ответа приложите скриншоты консоли, где видно все введенные команды и их вывод.
-
+![vagrant@server1: ~:docker 2024-04-10 12-30-06](vagrant@server1: ~:docker 2024-04-10 12-30-06.png)
 
 
 ## Задача 3
 1. Воспользуйтесь docker help или google, чтобы узнать как подключиться к стандартному потоку ввода/вывода/ошибок контейнера "custom-nginx-t2".
 2. Подключитесь к контейнеру и нажмите комбинацию Ctrl-C.
 
+```
     vagrant@server1:~/docker$ docker start custom-nginx-t2
     custom-nginx-t2
     vagrant@server1:~/docker$ docker attach custom-nginx-t2
@@ -103,7 +99,7 @@ vagrant@server1:~/docker$ curl 127.0.0.1:8080
     2024/04/10 04:49:33 [notice] 1#1: signal 17 (SIGCHLD) received from 23
     2024/04/10 04:49:33 [notice] 1#1: worker process 23 exited with code 0
     2024/04/10 04:49:33 [notice] 1#1: exit
-
+```
 3. Выполните ```docker ps -a``` и объясните своими словами почему контейнер остановился.
 
 vagrant@server1:~/docker$ docker ps -a
