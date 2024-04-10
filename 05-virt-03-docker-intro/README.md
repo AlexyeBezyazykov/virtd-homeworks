@@ -41,6 +41,7 @@ Hey, Netology
 3. Выполните команду ```date +"%d-%m-%Y %T.%N %Z" ; sleep 0.150 ; docker ps ; ss -tlpn | grep 127.0.0.1:8080  ; docker logs custom-nginx-t2 -n1 ; docker exec -it custom-nginx-t2 base64 /usr/share/nginx/html/index.html```
 4. Убедитесь с помощью curl или веб браузера, что индекс-страница доступна.
 
+    ```
     vagrant@server1:~/docker$ docker run -d -p 8080:80 g33torino/custom-nginx:1.0.0
     ec13f68f2ba6e067ff2a14d6a791018c3fa1736c3ac6d3a899a0bf27e07098b2
     vagrant@server1:~/docker$ docker ps -a
@@ -55,6 +56,9 @@ Hey, Netology
     PGh0bWw+Cgo8aGVhZD4KICAgIEhleSwgTmV0b2xvZ3kKPC9oZWFkPgoKPGJvZHk+CiAgICA8aDE+
     SSB3aWxsIGJlIERldk9wcyBFbmdpbmVlciE8L2gxPgo8L2JvZHk+Cgo8L2h0bWw+Cg==
     vagrant@server1:~/docker$ curl localhost:8080
+    
+    ```
+```
 <html>
 
 <head>
@@ -78,9 +82,12 @@ vagrant@server1:~/docker$ curl 127.0.0.1:8080
 </body>
 
 </html>
-vagrant@server1:~/docker$
+```
+
+![vagrant@server1: ~:docker 2024-04-10 12-30-06](vagrant@server1: ~:docker 2024-04-10 12-30-06.png)
 
 В качестве ответа приложите скриншоты консоли, где видно все введенные команды и их вывод.
+
 
 
 ## Задача 3
