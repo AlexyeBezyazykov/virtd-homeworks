@@ -32,6 +32,7 @@ Hey, Netology
 ```
     https://hub.docker.com/repository/docker/g33torino/custom-nginx/general
 ```
+
 ## Задача 2
 1. Запустите ваш образ custom-nginx:1.0.0 командой docker run в соответвии с требованиями:
 - имя контейнера "ФИО-custom-nginx-t2"
@@ -78,11 +79,12 @@ Hey, Netology
         <h1>I will be DevOps Engineer!</h1>
     </body>
     
-    </html>
-```
+    </html> 
+
 
 В качестве ответа приложите скриншоты консоли, где видно все введенные команды и их вывод.
-![vagrant@server1: ~:docker 2024-04-10 12-30-06](vagrant@server1: ~:docker 2024-04-10 12-30-06.png)
+
+![vagrant@server1: ~:docker 2024-04-10 12-30-06](https://github.com/AlexyeBezyazykov/virtd-homeworks/blob/shvirtd-1/05-virt-03-docker-intro/vagrant%40server1%3A%20~%3Adocker%202024-04-10%2012-30-06.png)
 
 
 ## Задача 3
@@ -100,27 +102,31 @@ Hey, Netology
     2024/04/10 04:49:33 [notice] 1#1: worker process 23 exited with code 0
     2024/04/10 04:49:33 [notice] 1#1: exit
 ```
+
 3. Выполните ```docker ps -a``` и объясните своими словами почему контейнер остановился.
 
+```
 vagrant@server1:~/docker$ docker ps -a
 CONTAINER ID   IMAGE                          COMMAND                  CREATED          STATUS                      PORTS     NAMES
 ec13f68f2ba6   g33torino/custom-nginx:1.0.0   "/docker-entrypoint.…"   21 minutes ago   Exited (0) 5 seconds ago              custom-nginx-t2
-
-Комбинация клавиш Ctrl-c в контексте docker attach отправляет сигнал остановки (SIGINT) внутри контейнера. 
-Этот сигнал обычно интерпретируется как просьба остановить выполнение процесса, 
-а в случае запущенного интерактивного процесса в контейнере это может привести к завершению работы контейнера
+```
+    Комбинация клавиш Ctrl-c в контексте docker attach отправляет сигнал остановки (SIGINT) внутри контейнера. 
+    Этот сигнал обычно интерпретируется как просьба остановить выполнение процесса, 
+    а в случае запущенного интерактивного процесса в контейнере это может привести к завершению работы контейнера
 
 4. Перезапустите контейнер
-
+```
     vagrant@server1:~/docker$ docker start custom-nginx-t2
     custom-nginx-t2
+```
 
 5. Зайдите в интерактивный терминал контейнера "custom-nginx-t2" с оболочкой bash.
 
-    vagrant@server1:~/docker$ docker exec -it custom-nginx-t2 /bin/bash
+   ``` vagrant@server1:~/docker$ docker exec -it custom-nginx-t2 /bin/bash ```
 
 6. Установите любимый текстовый редактор(vim, nano итд) с помощью apt-get.
 
+```
     root@ec13f68f2ba6:/# apt-get update
     Get:1 http://security.debian.org/debian-security buster/updates InRelease [34.8 kB]
     Get:2 http://deb.debian.org/debian buster InRelease [122 kB]
@@ -153,13 +159,13 @@ ec13f68f2ba6   g33torino/custom-nginx:1.0.0   "/docker-entrypoint.…"   21 minu
     update-alternatives: warning: skip creation of /usr/share/man/man1/editor.1.gz because associated file /usr/share/man/man1/nano.1.gz (of link group editor) doesn't exist
     update-alternatives: using /bin/nano to provide /usr/bin/pico (pico) in auto mode
     update-alternatives: warning: skip creation of /usr/share/man/man1/pico.1.gz because associated file /usr/share/man/man1/nano.1.gz (of link group pico) doesn't exist
-
+```
 7. Отредактируйте файл "/etc/nginx/conf.d/default.conf", заменив порт "listen 80" на "listen 81".
 
-    root@ec13f68f2ba6:/# nano /etc/nginx/conf.d/default.conf
+   ``` root@ec13f68f2ba6:/# nano /etc/nginx/conf.d/default.conf```
 
 8. Запомните(!) и выполните команду ```nginx -s reload```, а затем внутри контейнера ```curl http://127.0.0.1:80 ; curl http://127.0.0.1:81```.
-
+```
 root@ec13f68f2ba6:/# nginx -s reload
 2024/04/10 04:57:45 [notice] 310#310: signal process started
 root@ec13f68f2ba6:/# curl http://127.0.0.1:80 ; curl http://127.0.0.1:81
@@ -175,18 +181,23 @@ curl: (7) Failed to connect to 127.0.0.1 port 80: Connection refused
 </body>
 
 </html>
+```
 
 9. Выйдите из контейнера, набрав в консоли  ```exit``` или Ctrl-D.
 10. Проверьте вывод команд: ```ss -tlpn | grep 127.0.0.1:8080``` , ```docker port custom-nginx-t2```, ```curl http://127.0.0.1:8080```. Кратко объясните суть возникшей проблемы.
 
-Изменение конфигурации веб-сервера nginx внутри контейнера  влияет исключительно на работу самого nginx. Проброшенные порты с хоста на контейнер остаются без изменений.
+```Изменение конфигурации веб-сервера nginx внутри контейнера  влияет исключительно на работу самого nginx. Проброшенные порты с хоста на контейнер остаются без изменений. ```
 
 12. Удалите запущенный контейнер "custom-nginx-t2", не останавливая его.(воспользуйтесь --help или google)
 
+```
 vagrant@server1:~/docker$ docker rm -f custom-nginx-t2
 custom-nginx-t2
-
+```
 В качестве ответа приложите скриншоты консоли, где видно все введенные команды и их вывод.
+
+![vagrant@server1: ~:docker 2024-04-10 13-13-40](https://github.com/AlexyeBezyazykov/virtd-homeworks/blob/shvirtd-1/05-virt-03-docker-intro/vagrant%40server1%3A%20~%3Adocker%202024-04-10%2013-13-40.png)
+![vagrant@server1: ~:docker 2024-04-11 00-00-37](https://github.com/AlexyeBezyazykov/virtd-homeworks/blob/shvirtd-1/05-virt-03-docker-intro/vagrant%40server1%3A%20~%3Adocker%202024-04-10%2013-14-19.png)
 
 ## Задача 4
 
@@ -197,7 +208,7 @@ custom-nginx-t2
 - Добавьте ещё один файл в текущий каталог ```$(pwd)``` на хостовой машине.
 - Подключитесь во второй контейнер и отобразите листинг и содержание файлов в ```/data``` контейнера.
 
-    vagrant@server1:~$ docker run -dti -v $(pwd):/data --name centos centos:latest /bin/bash
+  ```  vagrant@server1:~$ docker run -dti -v $(pwd):/data --name centos centos:latest /bin/bash
     a5ab7df5420105b0359173bffa1c00dff580e072b1b6063ad2f8f52b78b3c512
     vagrant@server1:~$ docker run -dti -v $(pwd):/data --name debian debian:latest /bin/bash
     bcf3e1d1def2257ab041692e627f86bd60a534c559ae6adba5fa0f9d0e5f3a6c
@@ -215,11 +226,12 @@ custom-nginx-t2
     root@bcf3e1d1def2:/# cd data
     root@bcf3e1d1def2:/data# ls
     docker	temp  temp2
-   
+   ```
 
 
 В качестве ответа приложите скриншоты консоли, где видно все введенные команды и их вывод.
 
+![vagrant@server1: ~ 2024-04-10 13-32-35](https://github.com/AlexyeBezyazykov/virtd-homeworks/blob/shvirtd-1/05-virt-03-docker-intro/vagrant%40server1%3A%20~%202024-04-10%2013-32-35.png)
 
 ## Задача 5
 
@@ -283,6 +295,7 @@ services:
 
 7. Удалите любой из манифестов компоуза(например compose.yaml).  Выполните команду "docker compose up -d". Прочитайте warning, объясните суть предупреждения и выполните предложенное действие. Погасите compose-проект ОДНОЙ(обязательно!!) командой.
 
+```
 vagrant@server1:~$ docker compose up -d
 WARN[0000] Found multiple config files with supported names: /home/vagrant/compose.yaml, /home/vagrant/docker-compose.yaml
 WARN[0000] Using /home/vagrant/compose.yaml
@@ -346,8 +359,9 @@ CONTAINER ID   IMAGE                           COMMAND                  CREATED 
 aeacc5f0b0b1   portainer/portainer-ce:latest   "/portainer"             About a minute ago   Up About a minute             vagrant-portainer-1
 fd9f4bda3228   registry:2                      "/entrypoint.sh /etc…"   About a minute ago   Up About a minute             vagrant-registry-1
 
-
+```
 
 В качестве ответа приложите скриншоты консоли, где видно все введенные команды и их вывод, файл compose.yaml , скриншот portainer c задеплоенным компоузом.
 
-
+![Portainer | local 2024-04-10 23-55-32](https://github.com/AlexyeBezyazykov/virtd-homeworks/blob/shvirtd-1/05-virt-03-docker-intro/Portainer%20%7C%20local%202024-04-10%2023-55-32.png)
+![vagrant@server1: ~:docker 2024-04-11 00-00-37](https://github.com/AlexyeBezyazykov/virtd-homeworks/blob/shvirtd-1/05-virt-03-docker-intro/vagrant%40server1%3A%20~%3Adocker%202024-04-11%2000-00-37.png)
