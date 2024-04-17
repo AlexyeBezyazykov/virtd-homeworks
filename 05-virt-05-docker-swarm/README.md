@@ -1106,4 +1106,4 @@ s5t5cxewfzp3   swarm_monitoring_unsee              replicated   1/1        cloud
 
 ````
 
-
+![Grafana - Docker Swarm Nodes 2024-04-17 15-27-47](Grafana - Docker Swarm Nodes 2024-04-17 15-27-47)
