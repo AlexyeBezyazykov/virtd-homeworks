@@ -1106,4 +1106,4 @@ s5t5cxewfzp3   swarm_monitoring_unsee              replicated   1/1        cloud
 
 ````
 
-![Grafana - Docker Swarm Nodes 2024-04-17 15-27-47](Grafana - Docker Swarm Nodes 2024-04-17 15-27-47)
+![Grafana - Docker Swarm Nodes 2024-04-17 15-27-47](https://github.com/AlexyeBezyazykov/virtd-homeworks/blob/shvirtd-1/05-virt-05-docker-swarm/Grafana%20-%20Docker%20Swarm%20Nodes%202024-04-17%2015-27-47.png)
