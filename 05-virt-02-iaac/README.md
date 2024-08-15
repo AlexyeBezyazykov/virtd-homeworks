@@ -203,7 +203,7 @@ docker version && docker compose version
         
 3. Найдите свой образ в web консоли yandex_cloud
 
-   ![Виртуальные машины | Yandex Compute Cloud 2024-08-15 15-50-29]([Виртуальные машины | Yandex Compute Cloud 2024-08-15 15-50-29.png](https://github.com/AlexyeBezyazykov/virtd-homeworks/blob/shvirtd-1/05-virt-02-iaac/%D0%92%D0%B8%D1%80%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D1%8B%20%7C%20Yandex%20Compute%20Cloud%202024-08-15%2015-50-29.png?raw=true))
+   ![Виртуальные машины | Yandex Compute Cloud 2024-08-15 15-50-29](https://github.com/AlexyeBezyazykov/virtd-homeworks/blob/shvirtd-1/05-virt-02-iaac/%D0%92%D0%B8%D1%80%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D1%8B%20%7C%20Yandex%20Compute%20Cloud%202024-08-15%2015-50-29.png)
 
 4. Необязательное задание(*): найдите в документации yandex cloud как найти свой образ с помощью утилиты командной строки "yc cli".
 
@@ -219,7 +219,7 @@ docker version && docker compose version
 5. Создайте новую ВМ (минимальные параметры) в облаке, используя данный образ.
 6. Подключитесь по ssh и убедитесь в наличии установленного docker.
 
-![debian@compute-vm-2-1-10-hdd-1723707744313: ~ 2024-08-15 15-50-04](debian@compute-vm-2-1-10-hdd-1723707744313: ~ 2024-08-15 15-50-04.png)
+![debian@compute-vm-2-1-10-hdd-1723707744313: ~ 2024-08-15 15-50-04](https://github.com/AlexyeBezyazykov/virtd-homeworks/blob/shvirtd-1/05-virt-02-iaac/debian%40compute-vm-2-1-10-hdd-1723707744313%3A%20~%202024-08-15%2015-50-04.png)
 
 7. Удалите ВМ и образ.
 8. **ВНИМАНИЕ!** Никогда не выкладываете oauth token от облака в git-репозиторий! Утечка секретного токена может привести к финансовым потерям. После выполнения задания обязательно удалите секретные данные из файла mydebian.json и mydebian.json.pkr.hcl. (замените содержимое токена на  "ххххх")
