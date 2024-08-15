@@ -38,133 +38,190 @@
 docker version && docker compose version
 ```
 
- vagrant up
-Bringing machine 'server1.netology' up with 'virtualbox' provider...
-==> server1.netology: Checking if box 'bento/ubuntu-20.04' version '202206.03.0' is up to date...
-==> server1.netology: Setting the name of the VM: server1.netology
-==> server1.netology: Clearing any previously set network interfaces...
-==> server1.netology: Preparing network interfaces based on configuration...
-    server1.netology: Adapter 1: nat
-    server1.netology: Adapter 2: hostonly
-==> server1.netology: Forwarding ports...
-    server1.netology: 22 (guest) => 20011 (host) (adapter 1)
-    server1.netology: 22 (guest) => 2222 (host) (adapter 1)
-==> server1.netology: Running 'pre-boot' VM customizations...
-==> server1.netology: Booting VM...
-==> server1.netology: Waiting for machine to boot. This may take a few minutes...
-    server1.netology: SSH address: 127.0.0.1:2222
-    server1.netology: SSH username: vagrant
-    server1.netology: SSH auth method: private key
-    server1.netology:
-    server1.netology: Vagrant insecure key detected. Vagrant will automatically replace
-    server1.netology: this with a newly generated keypair for better security.
-    server1.netology:
-    server1.netology: Inserting generated public key within guest...
-    server1.netology: Removing insecure key from the guest if it's present...
-    server1.netology: Key inserted! Disconnecting and reconnecting using new SSH key...
-==> server1.netology: Machine booted and ready!
-==> server1.netology: Checking for guest additions in VM...
-    server1.netology: The guest additions on this VM do not match the installed version of
-    server1.netology: VirtualBox! In most cases this is fine, but in rare cases it can
-    server1.netology: prevent things such as shared folders from working properly. If you see
-    server1.netology: shared folder errors, please make sure the guest additions within the
-    server1.netology: virtual machine match the version of VirtualBox you have installed on
-    server1.netology: your host and reload your VM.
-    server1.netology:
-    server1.netology: Guest Additions Version: 6.1.34
-    server1.netology: VirtualBox Version: 7.0
-==> server1.netology: Setting hostname...
-==> server1.netology: Configuring and enabling network interfaces...
-==> server1.netology: Mounting shared folders...
-    server1.netology: /vagrant => /Users/natalia/virt/virt-homeworks/05-virt-02-iaac/src/vagrant
-==> server1.netology: Running provisioner: ansible...
-    server1.netology: Running ansible-playbook...
-
-PLAY [nodes] *******************************************************************
-
-TASK [Gathering Facts] *********************************************************
-ok: [server1.netology]
-
-TASK [Create directory for ssh-keys] *******************************************
-ok: [server1.netology]
-
-TASK [Adding rsa-key in /root/.ssh/authorized_keys] ****************************
-changed: [server1.netology]
-
-TASK [Checking DNS] ************************************************************
-changed: [server1.netology]
-
-TASK [Installing tools] ********************************************************
-ok: [server1.netology] => (item=git)
-ok: [server1.netology] => (item=curl)
-
-TASK [Installing docker] *******************************************************
-changed: [server1.netology]
-
-TASK [Add the current user to docker group] ************************************
-changed: [server1.netology]
-
-PLAY RECAP *********************************************************************
-server1.netology           : ok=7    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
-
-natalia@MacBook-Pro-Natalia vagrant % vagrant ssh
-Welcome to Ubuntu 20.04.4 LTS (GNU/Linux 5.4.0-110-generic x86_64)
-
- * Documentation:  https://help.ubuntu.com
- * Management:     https://landscape.canonical.com
- * Support:        https://ubuntu.com/advantage
-
-  System information as of Thu 04 Apr 2024 02:51:05 AM UTC
-
-  System load:  0.17               Users logged in:          0
-  Usage of /:   13.3% of 30.63GB   IPv4 address for docker0: 172.17.0.1
-  Memory usage: 23%                IPv4 address for eth0:    10.0.2.15
-  Swap usage:   0%                 IPv4 address for eth1:    192.168.56.11
-  Processes:    112
-
-
-This system is built by the Bento project by Chef Software
-More information can be found at https://github.com/chef/bento
-Last login: Thu Apr  4 02:49:26 2024 from 10.0.2.2
-vagrant@server1:~$ docker version && docker compose version
-Client: Docker Engine - Community
- Version:           26.0.0
- API version:       1.45
- Go version:        go1.21.8
- Git commit:        2ae903e
- Built:             Wed Mar 20 15:17:51 2024
- OS/Arch:           linux/amd64
- Context:           default
-
-Server: Docker Engine - Community
- Engine:
-  Version:          26.0.0
-  API version:      1.45 (minimum version 1.24)
-  Go version:       go1.21.8
-  Git commit:       8b79278
-  Built:            Wed Mar 20 15:17:51 2024
-  OS/Arch:          linux/amd64
-  Experimental:     false
- containerd:
-  Version:          1.6.28
-  GitCommit:        ae07eda36dd25f8a1b98dfbf587313b99c0190bb
- runc:
-  Version:          1.1.12
-  GitCommit:        v1.1.12-0-g51d5e94
- docker-init:
-  Version:          0.19.0
-  GitCommit:        de40ad0
-Docker Compose version v2.25.0
+     vagrant up
+    Bringing machine 'server1.netology' up with 'virtualbox' provider...
+    ==> server1.netology: Checking if box 'bento/ubuntu-20.04' version '202206.03.0' is up to date...
+    ==> server1.netology: Setting the name of the VM: server1.netology
+    ==> server1.netology: Clearing any previously set network interfaces...
+    ==> server1.netology: Preparing network interfaces based on configuration...
+        server1.netology: Adapter 1: nat
+        server1.netology: Adapter 2: hostonly
+    ==> server1.netology: Forwarding ports...
+        server1.netology: 22 (guest) => 20011 (host) (adapter 1)
+        server1.netology: 22 (guest) => 2222 (host) (adapter 1)
+    ==> server1.netology: Running 'pre-boot' VM customizations...
+    ==> server1.netology: Booting VM...
+    ==> server1.netology: Waiting for machine to boot. This may take a few minutes...
+        server1.netology: SSH address: 127.0.0.1:2222
+        server1.netology: SSH username: vagrant
+        server1.netology: SSH auth method: private key
+        server1.netology:
+        server1.netology: Vagrant insecure key detected. Vagrant will automatically replace
+        server1.netology: this with a newly generated keypair for better security.
+        server1.netology:
+        server1.netology: Inserting generated public key within guest...
+        server1.netology: Removing insecure key from the guest if it's present...
+        server1.netology: Key inserted! Disconnecting and reconnecting using new SSH key...
+    ==> server1.netology: Machine booted and ready!
+    ==> server1.netology: Checking for guest additions in VM...
+        server1.netology: The guest additions on this VM do not match the installed version of
+        server1.netology: VirtualBox! In most cases this is fine, but in rare cases it can
+        server1.netology: prevent things such as shared folders from working properly. If you see
+        server1.netology: shared folder errors, please make sure the guest additions within the
+        server1.netology: virtual machine match the version of VirtualBox you have installed on
+        server1.netology: your host and reload your VM.
+        server1.netology:
+        server1.netology: Guest Additions Version: 6.1.34
+        server1.netology: VirtualBox Version: 7.0
+    ==> server1.netology: Setting hostname...
+    ==> server1.netology: Configuring and enabling network interfaces...
+    ==> server1.netology: Mounting shared folders...
+        server1.netology: /vagrant => /Users/natalia/virt/virt-homeworks/05-virt-02-iaac/src/vagrant
+    ==> server1.netology: Running provisioner: ansible...
+        server1.netology: Running ansible-playbook...
+    
+    PLAY [nodes] *******************************************************************
+    
+    TASK [Gathering Facts] *********************************************************
+    ok: [server1.netology]
+    
+    TASK [Create directory for ssh-keys] *******************************************
+    ok: [server1.netology]
+    
+    TASK [Adding rsa-key in /root/.ssh/authorized_keys] ****************************
+    changed: [server1.netology]
+    
+    TASK [Checking DNS] ************************************************************
+    changed: [server1.netology]
+    
+    TASK [Installing tools] ********************************************************
+    ok: [server1.netology] => (item=git)
+    ok: [server1.netology] => (item=curl)
+    
+    TASK [Installing docker] *******************************************************
+    changed: [server1.netology]
+    
+    TASK [Add the current user to docker group] ************************************
+    changed: [server1.netology]
+    
+    PLAY RECAP *********************************************************************
+    server1.netology           : ok=7    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+    
+    natalia@MacBook-Pro-Natalia vagrant % vagrant ssh
+    Welcome to Ubuntu 20.04.4 LTS (GNU/Linux 5.4.0-110-generic x86_64)
+    
+     * Documentation:  https://help.ubuntu.com
+     * Management:     https://landscape.canonical.com
+     * Support:        https://ubuntu.com/advantage
+    
+      System information as of Thu 04 Apr 2024 02:51:05 AM UTC
+    
+      System load:  0.17               Users logged in:          0
+      Usage of /:   13.3% of 30.63GB   IPv4 address for docker0: 172.17.0.1
+      Memory usage: 23%                IPv4 address for eth0:    10.0.2.15
+      Swap usage:   0%                 IPv4 address for eth1:    192.168.56.11
+      Processes:    112
+    
+    
+    This system is built by the Bento project by Chef Software
+    More information can be found at https://github.com/chef/bento
+    Last login: Thu Apr  4 02:49:26 2024 from 10.0.2.2
+    vagrant@server1:~$ docker version && docker compose version
+    Client: Docker Engine - Community
+     Version:           26.0.0
+     API version:       1.45
+     Go version:        go1.21.8
+     Git commit:        2ae903e
+     Built:             Wed Mar 20 15:17:51 2024
+     OS/Arch:           linux/amd64
+     Context:           default
+    
+    Server: Docker Engine - Community
+     Engine:
+      Version:          26.0.0
+      API version:      1.45 (minimum version 1.24)
+      Go version:       go1.21.8
+      Git commit:       8b79278
+      Built:            Wed Mar 20 15:17:51 2024
+      OS/Arch:          linux/amd64
+      Experimental:     false
+     containerd:
+      Version:          1.6.28
+      GitCommit:        ae07eda36dd25f8a1b98dfbf587313b99c0190bb
+     runc:
+      Version:          1.1.12
+      GitCommit:        v1.1.12-0-g51d5e94
+     docker-init:
+      Version:          0.19.0
+      GitCommit:        de40ad0
+    Docker Compose version v2.25.0
 
 ## Задача 3
 
 1. Отредактируйте файл    или  [mydebian.json.pkr.hcl](https://github.com/netology-code/virtd-homeworks/blob/shvirtd-1/05-virt-02-iaac/src/mydebian.json.pkr.hcl)  в директории src (packer умеет и в json, и в hcl форматы):
    - добавьте в скрипт установку docker (возьмите готовый bash-скрипт из [Vagrantfile](https://github.com/netology-code/virtd-homeworks/blob/shvirtd-1/05-virt-02-iaac/src/Vagrantfile)  или  [документации]( https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository)  к docker), 
    - дополнительно установите в данном образе htop и tmux.(не забудьте про ключ автоматического подтверждения установки для apt)
+   
+        source "yandex" "debian_docker" {
+        disk_type           = "network-hdd"
+        folder_id           = "****"
+        image_description   = "my custom debian with docker"
+        image_name          = "debian-11-docker"
+        source_image_family = "debian-11"
+        ssh_username        = "debian"
+        subnet_id           = "***"
+        token               = "***"
+        use_ipv4_nat        = true
+        zone                = "ru-central1-b"
+        }
+        
+        build {
+        sources = ["source.yandex.debian_docker"]
+        
+        provisioner "shell" {
+        inline = [ <<EOF
+        export DEBIAN_FRONTEND=noninteractive
+        # Add Docker's official GPG key:
+        sudo apt-get update -y -q
+        sudo apt-get install -y ca-certificates curl gnupg
+        sudo install -m 0755 -d /etc/apt/keyrings
+        sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc      
+        sudo chmod a+r /etc/apt/keyrings/docker.asc
+        
+        # Add the repository to Apt sources:
+        echo \
+        "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
+        $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+        sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+        sudo apt-get update
+        sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+        sudo apt-get install -y htop tmux
+        
+        EOF
+        ]
+        }
+        }
+        
 3. Найдите свой образ в web консоли yandex_cloud
+
+   ![Виртуальные машины | Yandex Compute Cloud 2024-08-15 15-50-29](Виртуальные машины | Yandex Compute Cloud 2024-08-15 15-50-29.png)
+
 4. Необязательное задание(*): найдите в документации yandex cloud как найти свой образ с помощью утилиты командной строки "yc cli".
+
+     natalia@m2012k11ag src % yc compute image list
+        +----------------------+------------------+--------+----------------------+--------+
+        |          ID          |       NAME       | FAMILY |     PRODUCT IDS      | STATUS |
+        +----------------------+------------------+--------+----------------------+--------+
+        | fd8v845deh4n65uhsveq | debian-11-docker |        | f2eh4mveond2hk0t5bb4 | READY  |
+        +----------------------+------------------+--------+----------------------+--------+
+        
+
+
 5. Создайте новую ВМ (минимальные параметры) в облаке, используя данный образ.
 6. Подключитесь по ssh и убедитесь в наличии установленного docker.
+
+![debian@compute-vm-2-1-10-hdd-1723707744313: ~ 2024-08-15 15-50-04](debian@compute-vm-2-1-10-hdd-1723707744313: ~ 2024-08-15 15-50-04.png)
+
 7. Удалите ВМ и образ.
 8. **ВНИМАНИЕ!** Никогда не выкладываете oauth token от облака в git-репозиторий! Утечка секретного токена может привести к финансовым потерям. После выполнения задания обязательно удалите секретные данные из файла mydebian.json и mydebian.json.pkr.hcl. (замените содержимое токена на  "ххххх")
 9. В качестве ответа на задание  загрузите результирующий файл в ваш ЛК.
