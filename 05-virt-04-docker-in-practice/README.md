@@ -88,9 +88,44 @@ https://github.com/AlexyeBezyazykov/shvirtd-example-python
 Скачайте docker образ ```hashicorp/terraform:latest``` и скопируйте бинарный файл ```/bin/terraform``` на свою локальную машину, используя dive и docker save.
 Предоставьте скриншоты  действий .
 
+(venv) natalia@ilo-srv-irk virt % docker save  hashicorp/terraform -o terraform.tar
+(venv) natalia@ilo-srv-irk virt % ls
+terraform.tar   virtd-homeworks
+(venv) natalia@ilo-srv-irk virt % tar -xf terraform.tar 
+(venv) natalia@ilo-srv-irk virt % ls
+blobs           index.json      manifest.json   oci-layout      repositories    terraform.tar   virtd-homeworks
+(venv) natalia@ilo-srv-irk virt % cd blobs             
+(venv) natalia@ilo-srv-irk blobs % ls
+sha256
+(venv) natalia@ilo-srv-irk blobs % cd sha256 
+(venv) natalia@ilo-srv-irk sha256 % ls
+00f5a6fc49eddbbfbd3925b9d6110273e71fa28780fcca61c5d9aa6ca3083128        8b5ed351364e4e5f1f9d23275718122ca5db832cbbd26afbc4687aba0b80bbb9
+08b096d423eb3e0fad56ca2d09548a576ddb01f6065b6fb88ab6470a8ea5391d        909a9d4540ae30aa72461faadc22cd0282816b376716edee3fda49f2c5cd5aee
+2e4c7a391cbe470bdd510791978859db7e09e412dc2587c5b27451aef764cf1b        9fcd62ce020e4ae7338436e57648ddeb786e86b279a507ed068f23bfe4f9874e
+3aac1ffd9c0e58b47f5c3e9985b6e9cb4b402fd4694569a943cde6c5453bd337        f7542cfaa07606be31b36695a9ffeae7fe5dd6bbe601133f6055c0b4e3d353d1
+78561cef0761903dd2f7d09856150a6d4fb48967a8f113f3e33d79effbf59a07        ff050fba86f4a348141841cc7d9ebc8619dc77478ea215330000b3159151aac7
+
+virt – README.md 2024-08-27 00-32-52
+
+(venv) natalia@ilo-srv-irk sha256 % tar -xf 2e4c7a391cbe470bdd510791978859db7e09e412dc2587c5b27451aef764cf1b
+(venv) natalia@ilo-srv-irk sha256 % ls
+00f5a6fc49eddbbfbd3925b9d6110273e71fa28780fcca61c5d9aa6ca3083128        909a9d4540ae30aa72461faadc22cd0282816b376716edee3fda49f2c5cd5aee
+08b096d423eb3e0fad56ca2d09548a576ddb01f6065b6fb88ab6470a8ea5391d        9fcd62ce020e4ae7338436e57648ddeb786e86b279a507ed068f23bfe4f9874e
+2e4c7a391cbe470bdd510791978859db7e09e412dc2587c5b27451aef764cf1b        bin
+3aac1ffd9c0e58b47f5c3e9985b6e9cb4b402fd4694569a943cde6c5453bd337        f7542cfaa07606be31b36695a9ffeae7fe5dd6bbe601133f6055c0b4e3d353d1
+78561cef0761903dd2f7d09856150a6d4fb48967a8f113f3e33d79effbf59a07        ff050fba86f4a348141841cc7d9ebc8619dc77478ea215330000b3159151aac7
+8b5ed351364e4e5f1f9d23275718122ca5db832cbbd26afbc4687aba0b80bbb9
+(venv) natalia@ilo-srv-irk sha256 % cd bin
+(venv) natalia@ilo-srv-irk bin % ls
+terraform
+(venv) natalia@ilo-srv-irk bin % 
+
+
 ## Задача 6.1
 Добейтесь аналогичного результата, используя docker cp.  
 Предоставьте скриншоты  действий .
+
+virt – README.md 2024-08-27 00-52-49
 
 ## Задача 6.2 (**)
 Предложите способ извлечь файл из контейнера, используя только команду docker build и любой Dockerfile.  
