@@ -60,11 +60,8 @@ See 'snap info docker' for additional versions.
 5. Подключитесь к БД mysql с помощью команды ```docker exec <имя_контейнера> mysql -uroot -p<пароль root-пользователя>``` . Введите последовательно команды (не забываем в конце символ ; ): ```show databases; use <имя вашей базы данных(по-умолчанию example)>; show tables; SELECT * from requests LIMIT 10;```.
 
 6. Остановите проект. В качестве ответа приложите скриншот sql-запроса.
-
-```
-https://github.com/AlexyeBezyazykov/shvirtd-example-python
-```
-virt – virt – .env 2024-08-22 17-21-22.png 2024-08-26 23-57-40.png
+![3](https://github.com/AlexyeBezyazykov/virtd-homeworks/blob/shvirtd-1/05-virt-04-docker-in-practice/Mozilla%20Firefox%202024-08-26%2023-46-11.png)
+![1](https://github.com/AlexyeBezyazykov/virtd-homeworks/blob/shvirtd-1/05-virt-04-docker-in-practice/virt%20%E2%80%93%20virt%20%E2%80%93%20.env%202024-08-22%2017-21-22.png%202024-08-26%2023-57-40.png)
 
 ## Задача 4
 1. Запустите в Yandex Cloud ВМ (вам хватит 2 Гб Ram).
@@ -76,6 +73,11 @@ virt – virt – .env 2024-08-22 17-21-22.png 2024-08-26 23-57-40.png
 
 ```
 https://github.com/AlexyeBezyazykov/shvirtd-example-python
+```
+![2](https://github.com/AlexyeBezyazykov/virtd-homeworks/blob/shvirtd-1/05-virt-04-docker-in-practice/%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0%20%D0%B2%D0%B5%D0%B1-%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20%D0%BD%D0%B0%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%D0%BD%D0%BE%D1%81%D1%82%D1%8C%20%D0%B8%20%D1%81%D0%BA%D0%BE%D1%80%D0%BE%D1%81%D1%82%D1%8C%20%D0%BE%D1%82%D0%BA%D0%BB%D0%B8%D0%BA%D0%B0%20%3A%20Check%20host%20-%20%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD%20%D0%BC%D0%BE%D0%BD%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%BD%D0%B3%20%D0%B2%D0%B5%D0%B1-%D1%81%D0%B0%D0%B9%D1%82%D0%B0%202024-08-26%2023-40-44.png)
+
+```
+https://github.com/AlexyeBezyazykov/shvirtd-example-python/blob/main/bash.sh
 ```
 
 ## Задача 5 (*)
